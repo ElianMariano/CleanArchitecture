@@ -1,12 +1,15 @@
 using CleanArchitecture.Application.Exceptions;
+using CleanArchitecture.Application.Extensions;
 using CleanArchitecture.Application.Repositories;
 using CleanArchitecture.Contracts;
 using CleanArchitecture.Domain;
 using CleanArchitecture.Domain.ValueObjects;
+using Microsoft.Extensions.Logging;
 
 namespace CleanArchitecture.Application.Items.Commands.Update;
 
 public class UpdateItemHandler(
+    ILogger<UpdateItemHandler> logger,
     IUnitOfWork unitOfWork,
     IItemRepository repository)
  : IApplicationHandler<UpdateItemRequest, UpdateItemResponse>
@@ -22,6 +25,7 @@ public class UpdateItemHandler(
         }
         item.Update(request.Name, request.Description, request.Value, request.Status);
         await unitOfWork.CommitAsync(cancellationToken);
+        logger.LogUpdateInformation(item.Id.Value);
         return new UpdateItemResponse(item.Id.Value);
     }
 }
