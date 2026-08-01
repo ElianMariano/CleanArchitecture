@@ -1,23 +1,24 @@
 namespace CleanArchitecture.Contracts.DataTransferObjects;
 
-public class PagedResponseBase<T>(
-    IEnumerable<T> data,
-    int totalItems,
-    int currentPage = 1,
-    int pageSize = 12
-)
+public class PagedResponseBase<TData> : ResponseBase<IReadOnlyList<TData>>
 {
-    public int TotalPages => (int)Math.Ceiling((double) TotalItems / PageSize);
+    public int TotalPages => (int) Math.Ceiling((double) TotalItems / PageSize);
 
     public bool HasNext => CurrentPage < TotalPages;
 
     public bool HasPrevious => CurrentPage > 1;
 
-    public int TotalItems { get; set; } = totalItems;
+    public int TotalItems { get; set; }
 
-    public IEnumerable<T> Data { get; set; } = data;
+    public int CurrentPage { get; set; }
 
-    public int CurrentPage { get; set; } = currentPage;
+    public int PageSize { get; set; }
 
-    public int PageSize { get; set; } = pageSize;
+    public PagedResponseBase(IReadOnlyList<TData> data, int totalItems, int currentPage = 1, int pageSize = 12) : base(data)
+    {
+        Data = data;
+        TotalItems = totalItems;
+        CurrentPage = currentPage;
+        PageSize = pageSize;
+    }
 }

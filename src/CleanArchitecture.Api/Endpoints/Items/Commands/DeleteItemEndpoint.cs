@@ -14,7 +14,7 @@ public class DeleteItemEndpoint : Endpoint<DeleteItemRequest, DeleteItemResponse
 
     public override void Configure()
     {
-        Delete($"/{ItemRoutes.Route}/{{itemId}}");
+        Delete($"{ItemRoutes.Route}/{{itemId}}");
 
         Description(x =>
         {

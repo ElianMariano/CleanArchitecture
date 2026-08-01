@@ -19,16 +19,16 @@ public class GenericRepository<TEntity, TId> : IGenericRepository<TEntity, TId>
     public async Task<PagedResponseBase<TEntity>> GetPagedAsync(PagedRequestBase request, CancellationToken cancellationToken)
     {
         IQueryable<TEntity> query = _dbSet.AsNoTracking();
-        var totalItems = await query.CountAsync(cancellationToken);
+        int totalItems = await query.CountAsync(cancellationToken);
         var data = await query
             .Skip((request.CurrentPage - 1) * request.PageSize)
             .Take(request.PageSize)
             .ToListAsync(cancellationToken);
         return new PagedResponseBase<TEntity>(
             data,
+            totalItems,
             request.CurrentPage,
-            request.PageSize,
-            totalItems);
+            request.PageSize);
     }
 
     public virtual async Task<TEntity?> GetByIdAsync(TId id, CancellationToken cancellationToken)

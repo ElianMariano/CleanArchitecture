@@ -2,4 +2,4 @@ using CleanArchitecture.Contracts.DataTransferObjects;
 
 namespace CleanArchitecture.Application.Items.Queries.GetById;
 
-public class GetItemByIdResponse(ItemBase Data, int StatusCode = 200, bool Success = true) : ResponseBase<ItemBase>(Data, StatusCode, Success);
+public class GetItemByIdResponse(ItemBase Data, int StatusCode = 200) : ResponseBase<ItemBase>(Data, StatusCode);

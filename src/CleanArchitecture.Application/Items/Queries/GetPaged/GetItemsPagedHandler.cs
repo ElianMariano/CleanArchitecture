@@ -12,7 +12,7 @@ public class GetItemsPagedHandler(IItemRepository repository)
         CancellationToken cancellationToken)
     {
         var items = await repository.GetPagedAsync(request, cancellationToken);
-        var data = items.Data.Select(x => x.ToResponse());
+        var data = items.Data!.Select(x => x.ToResponse()).ToList();
         return new GetItemsPagedResponse(data, items.TotalItems, request.CurrentPage, request.PageSize);
     }
 }

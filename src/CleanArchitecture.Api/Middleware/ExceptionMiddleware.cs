@@ -29,7 +29,7 @@ public class ExceptionMiddleware : IExceptionHandler
             {
                 Title = nameof(ItemNotFoundException),
                 Detail = _localizer[ApplicationExceptionMessages.ITEM_NOT_FOUND, ex.Parameters],
-                Status = StatusCodes.Status400BadRequest
+                Status = StatusCodes.Status404NotFound
             },
             BusinessException ex => new ProblemDetails
             {

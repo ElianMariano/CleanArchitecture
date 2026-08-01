@@ -22,6 +22,6 @@ public class DeleteItemHandler(
         }
         repository.Delete(item, cancellationToken);
         await unitOfWork.CommitAsync(cancellationToken);
-        return new DeleteItemResponse(item.Id.Value);
+        return new DeleteItemResponse(null);
     }
 }
