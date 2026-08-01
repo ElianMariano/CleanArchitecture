@@ -23,7 +23,7 @@ public class UpdateItemHandler(
         {
             throw new ItemNotFoundException(request.ItemId);
         }
-        item.Update(request.Name, request.Description, request.Value, request.Status);
+        item.Update(request.Name, request.Description, request.Value!.Value, request.Status);
         await unitOfWork.CommitAsync(cancellationToken);
         logger.LogUpdateInformation(item.Id.Value);
         return new UpdateItemResponse(item.Id.Value);

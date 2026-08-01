@@ -10,7 +10,7 @@ public sealed class UpdateItemRequest
 
     public string? Description { get; init; }
 
-    public double Value { get; init; }
+    public double? Value { get; init; }
 
     public ItemStatus Status { get; init; }
 }

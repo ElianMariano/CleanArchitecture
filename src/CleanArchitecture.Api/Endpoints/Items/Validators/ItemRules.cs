@@ -23,14 +23,13 @@ public static class ItemRules
     public static IRuleBuilderOptions<T, string?> ItemDescription<T>(
         this IRuleBuilder<T, string?> rule)
     {
-        return rule
-            .MaximumLength(ItemConstraints.DescriptionMaxCharacters);
+        return rule.MaximumLength(ItemConstraints.DescriptionMaxCharacters);
     }
 
-    public static IRuleBuilderOptions<T, double> ItemValue<T>(
-        this IRuleBuilder<T, double> rule)
+    public static IRuleBuilderOptions<T, double?> ItemValue<T>(
+        this IRuleBuilder<T, double?> rule)
     {
-        return rule.NotEmpty();
+        return rule.NotNull();
     }
 
     public static IRuleBuilderOptions<T, ItemStatus> ItemStatus<T>(
