@@ -1,11 +1,11 @@
-using CleanArchitecture.Application.Items.Commands.Create;
-using CleanArchitecture.Application.Items.Commands.Delete;
-using CleanArchitecture.Application.Items.Commands.Update;
-using CleanArchitecture.Application.Items.Queries.GetById;
-using CleanArchitecture.Application.Items.Queries.GetPaged;
+using CleanArchitecture.Application.Handlers.Items.Commands.Create;
+using CleanArchitecture.Application.Handlers.Items.Commands.Delete;
+using CleanArchitecture.Application.Handlers.Items.Commands.Update;
+using CleanArchitecture.Application.Handlers.Items.Queries.GetById;
+using CleanArchitecture.Application.Handlers.Items.Queries.GetPaged;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CleanArchitecture.Application.Items;
+namespace CleanArchitecture.Application.Handlers.Items;
 
 public static class IncludeItemHandlers
 {

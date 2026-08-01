@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Enumerations;
 
-namespace CleanArchitecture.Application.Items;
+namespace CleanArchitecture.Application.Handlers.Items;
 
 public class ItemBase
 {

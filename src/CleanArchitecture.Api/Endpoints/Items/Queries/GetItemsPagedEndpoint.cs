@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Items.Queries.GetPaged;
+using CleanArchitecture.Application.Handlers.Items.Queries.GetPaged;
 using FastEndpoints;
 
 namespace CleanArchitecture.Api.Endpoints.Items.Queries;

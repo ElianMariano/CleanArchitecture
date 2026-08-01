@@ -1,4 +1,4 @@
-namespace CleanArchitecture.Application.Items.Queries.GetById;
+namespace CleanArchitecture.Application.Handlers.Items.Queries.GetById;
 
 public sealed class GetItemByIdRequest(Guid itemId)
 {

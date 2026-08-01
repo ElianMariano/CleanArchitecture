@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Items.Commands.Create;
+using CleanArchitecture.Application.Handlers.Items.Commands.Create;
 using FastEndpoints;
 
 namespace CleanArchitecture.Api.Endpoints.Items.Validators.Command;

@@ -6,16 +6,16 @@ using CleanArchitecture.Domain;
 using CleanArchitecture.Domain.ValueObjects;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchitecture.Application.Items.Commands.Delete;
+namespace CleanArchitecture.Application.Handlers.Items.Commands.Update;
 
-public class DeleteItemHandler(
-    ILogger<DeleteItemHandler> logger,
+public class UpdateItemHandler(
+    ILogger<UpdateItemHandler> logger,
     IUnitOfWork unitOfWork,
     IItemRepository repository)
-    : IApplicationHandler<DeleteItemRequest, DeleteItemResponse>
+ : IApplicationHandler<UpdateItemRequest, UpdateItemResponse>
 {
-    public async Task<DeleteItemResponse> Handle(
-        DeleteItemRequest request,
+    public async Task<UpdateItemResponse> Handle(
+        UpdateItemRequest request,
         CancellationToken cancellationToken)
     {
         Item? item = await repository.GetByIdAsync(new ItemId(request.ItemId), cancellationToken);
@@ -23,9 +23,9 @@ public class DeleteItemHandler(
         {
             throw new ItemNotFoundException(request.ItemId);
         }
-        repository.Delete(item, cancellationToken);
+        item.Update(request.Name, request.Description, request.Value, request.Status);
         await unitOfWork.CommitAsync(cancellationToken);
-        logger.LogDeleteInformation(request.ItemId);
-        return new DeleteItemResponse(null);
+        logger.LogUpdateInformation(item.Id.Value);
+        return new UpdateItemResponse(item.Id.Value);
     }
 }

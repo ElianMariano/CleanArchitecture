@@ -1,10 +1,10 @@
 using CleanArchitecture.Application.Extensions;
-using CleanArchitecture.Application.Items.Mappers;
+using CleanArchitecture.Application.Handlers.Items.Mappers;
 using CleanArchitecture.Application.Repositories;
 using CleanArchitecture.Contracts;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchitecture.Application.Items.Commands.Create;
+namespace CleanArchitecture.Application.Handlers.Items.Commands.Create;
 
 public class CreateItemHandler(
     ILogger<CreateItemHandler> logger,

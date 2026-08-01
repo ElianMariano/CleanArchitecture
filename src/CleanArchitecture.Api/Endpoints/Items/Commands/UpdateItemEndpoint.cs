@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Items.Commands.Update;
+using CleanArchitecture.Application.Handlers.Items.Commands.Update;
 using FastEndpoints;
 
 namespace CleanArchitecture.Api.Endpoints.Items.Commands;

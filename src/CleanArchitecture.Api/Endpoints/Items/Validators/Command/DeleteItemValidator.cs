@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Items.Commands.Delete;
+using CleanArchitecture.Application.Handlers.Items.Commands.Delete;
 using FastEndpoints;
 
 namespace CleanArchitecture.Api.Endpoints.Items.Validators.Command;

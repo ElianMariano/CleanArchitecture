@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Enumerations;
 
-namespace CleanArchitecture.Application.Items.Commands.Update;
+namespace CleanArchitecture.Application.Handlers.Items.Commands.Update;
 
 public sealed class UpdateItemRequest
 {

@@ -1,4 +1,4 @@
-using CleanArchitecture.Application.Items;
+using CleanArchitecture.Application.Handlers.Items;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanArchitecture.Application;

@@ -1,4 +1,4 @@
-namespace CleanArchitecture.Application.Items.Commands.Delete;
+namespace CleanArchitecture.Application.Handlers.Items.Commands.Delete;
 
 public sealed class DeleteItemRequest
 {

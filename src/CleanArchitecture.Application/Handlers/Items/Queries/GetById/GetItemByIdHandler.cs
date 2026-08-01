@@ -1,11 +1,11 @@
 using CleanArchitecture.Application.Exceptions;
-using CleanArchitecture.Application.Items.Mappers;
+using CleanArchitecture.Application.Handlers.Items.Mappers;
 using CleanArchitecture.Application.Repositories;
 using CleanArchitecture.Contracts;
 using CleanArchitecture.Domain;
 using CleanArchitecture.Domain.ValueObjects;
 
-namespace CleanArchitecture.Application.Items.Queries.GetById;
+namespace CleanArchitecture.Application.Handlers.Items.Queries.GetById;
 
 public class GetItemByIdHandler(IItemRepository repository)
  : IApplicationHandler<GetItemByIdRequest, GetItemByIdResponse>

@@ -1,7 +1,6 @@
-using CleanArchitecture.Contracts.DataTransferObjects;
 using CleanArchitecture.Domain;
 
-namespace CleanArchitecture.Application.Items.Mappers;
+namespace CleanArchitecture.Application.Handlers.Items.Mappers;
 
 public static class ItemMapper
 {

@@ -1,8 +1,8 @@
-using CleanArchitecture.Application.Items.Mappers;
+using CleanArchitecture.Application.Handlers.Items.Mappers;
 using CleanArchitecture.Application.Repositories;
 using CleanArchitecture.Contracts;
 
-namespace CleanArchitecture.Application.Items.Queries.GetPaged;
+namespace CleanArchitecture.Application.Handlers.Items.Queries.GetPaged;
 
 public class GetItemsPagedHandler(IItemRepository repository)
  : IApplicationHandler<GetItemsPagedRequest, GetItemsPagedResponse>
